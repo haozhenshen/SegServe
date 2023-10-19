@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+option java_outer_classname = "CampaignProto";
+option java_multiple_files = true;
+
+
+// Represents a Play Activity Rule
+message PlayActivityRule {
+  optional string content_id = 1;
+  optional int64 progress = 2;
+}
+
+// Represents a Subscription Rule
+message SubscriptionRule {
+  optional string subscription_id = 1;
+  optional string plan_name = 2;
+
+}
+
+// Represents a Login Activity Rule
+message LoginActivityRule {
+  optional string last_login_date = 1;
+}
+
+// Represents a Rule used in segmentation
+message Rule {
+  oneof rule {
+    PlayActivityRule play_activity_rule = 1;
+    SubscriptionRule subscription_rule = 2;
+    LoginActivityRule login_activity_rule = 3;
+  }
+}
+
+// Represents a Schedule used in segmentation
+message Schedule {
+  string cron_expression = 1;
+  string time_zone = 2;
+  string job_description = 3;
+  repeated string job_options = 4;
+}
+
+// Represents a Target used in segmentation
+message Target {
+  oneof rule {
+    HomePageShelfTarget home_page = 1;
+    PostPlayShelfTarget post_play = 2;
+    NotificationTarget notification = 3;
+  }
+}
+
+// Represents a HomePageShelfTarget used as a segmentation target
+message HomePageShelfTarget {
+  optional string shelf_id = 1;
+}
+
+// Represents a PostPlayShelfTarget used as a segmentation target
+message PostPlayShelfTarget {
+  optional string content_id = 1;
+  optional string shelf_id = 2;
+}
+
+// Represents a NotificationTarget used as a segmentation target
+message NotificationTarget {
+  optional string shelf_id = 1;
+}
+
+// Represents a Campaign with segmentation rules and targets
+message Campaign {
+  optional Rule rule = 1;
+  optional Schedule schedule = 2;
+  repeated Target target = 3;
+}
