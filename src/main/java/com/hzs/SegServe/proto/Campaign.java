@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Campaign() {
+    campaignId_ = "";
     target_ = java.util.Collections.emptyList();
   }
 
@@ -42,18 +43,77 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int RULE_FIELD_NUMBER = 1;
+  public static final int CAMPAIGN_ID_FIELD_NUMBER = 1;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object campaignId_ = "";
+  /**
+   * <pre>
+   * Add this line
+   * </pre>
+   *
+   * <code>optional string campaign_id = 1;</code>
+   * @return Whether the campaignId field is set.
+   */
+  @java.lang.Override
+  public boolean hasCampaignId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * Add this line
+   * </pre>
+   *
+   * <code>optional string campaign_id = 1;</code>
+   * @return The campaignId.
+   */
+  @java.lang.Override
+  public java.lang.String getCampaignId() {
+    java.lang.Object ref = campaignId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      campaignId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Add this line
+   * </pre>
+   *
+   * <code>optional string campaign_id = 1;</code>
+   * @return The bytes for campaignId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCampaignIdBytes() {
+    java.lang.Object ref = campaignId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      campaignId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RULE_FIELD_NUMBER = 2;
   private Rule rule_;
   /**
-   * <code>optional .Rule rule = 1;</code>
+   * <code>optional .Rule rule = 2;</code>
    * @return Whether the rule field is set.
    */
   @java.lang.Override
   public boolean hasRule() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>optional .Rule rule = 1;</code>
+   * <code>optional .Rule rule = 2;</code>
    * @return The rule.
    */
   @java.lang.Override
@@ -61,25 +121,25 @@ private static final long serialVersionUID = 0L;
     return rule_ == null ? Rule.getDefaultInstance() : rule_;
   }
   /**
-   * <code>optional .Rule rule = 1;</code>
+   * <code>optional .Rule rule = 2;</code>
    */
   @java.lang.Override
   public RuleOrBuilder getRuleOrBuilder() {
     return rule_ == null ? Rule.getDefaultInstance() : rule_;
   }
 
-  public static final int SCHEDULE_FIELD_NUMBER = 2;
+  public static final int SCHEDULE_FIELD_NUMBER = 3;
   private Schedule schedule_;
   /**
-   * <code>optional .Schedule schedule = 2;</code>
+   * <code>optional .Schedule schedule = 3;</code>
    * @return Whether the schedule field is set.
    */
   @java.lang.Override
   public boolean hasSchedule() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>optional .Schedule schedule = 2;</code>
+   * <code>optional .Schedule schedule = 3;</code>
    * @return The schedule.
    */
   @java.lang.Override
@@ -87,25 +147,25 @@ private static final long serialVersionUID = 0L;
     return schedule_ == null ? Schedule.getDefaultInstance() : schedule_;
   }
   /**
-   * <code>optional .Schedule schedule = 2;</code>
+   * <code>optional .Schedule schedule = 3;</code>
    */
   @java.lang.Override
   public ScheduleOrBuilder getScheduleOrBuilder() {
     return schedule_ == null ? Schedule.getDefaultInstance() : schedule_;
   }
 
-  public static final int TARGET_FIELD_NUMBER = 3;
+  public static final int TARGET_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private java.util.List<Target> target_;
   /**
-   * <code>repeated .Target target = 3;</code>
+   * <code>repeated .Target target = 4;</code>
    */
   @java.lang.Override
   public java.util.List<Target> getTargetList() {
     return target_;
   }
   /**
-   * <code>repeated .Target target = 3;</code>
+   * <code>repeated .Target target = 4;</code>
    */
   @java.lang.Override
   public java.util.List<? extends TargetOrBuilder> 
@@ -113,21 +173,21 @@ private static final long serialVersionUID = 0L;
     return target_;
   }
   /**
-   * <code>repeated .Target target = 3;</code>
+   * <code>repeated .Target target = 4;</code>
    */
   @java.lang.Override
   public int getTargetCount() {
     return target_.size();
   }
   /**
-   * <code>repeated .Target target = 3;</code>
+   * <code>repeated .Target target = 4;</code>
    */
   @java.lang.Override
   public Target getTarget(int index) {
     return target_.get(index);
   }
   /**
-   * <code>repeated .Target target = 3;</code>
+   * <code>repeated .Target target = 4;</code>
    */
   @java.lang.Override
   public TargetOrBuilder getTargetOrBuilder(
@@ -150,13 +210,16 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getRule());
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, campaignId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(2, getSchedule());
+      output.writeMessage(2, getRule());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(3, getSchedule());
     }
     for (int i = 0; i < target_.size(); i++) {
-      output.writeMessage(3, target_.get(i));
+      output.writeMessage(4, target_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -168,16 +231,19 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getRule());
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, campaignId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getSchedule());
+        .computeMessageSize(2, getRule());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getSchedule());
     }
     for (int i = 0; i < target_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, target_.get(i));
+        .computeMessageSize(4, target_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -194,6 +260,11 @@ private static final long serialVersionUID = 0L;
     }
     Campaign other = (Campaign) obj;
 
+    if (hasCampaignId() != other.hasCampaignId()) return false;
+    if (hasCampaignId()) {
+      if (!getCampaignId()
+          .equals(other.getCampaignId())) return false;
+    }
     if (hasRule() != other.hasRule()) return false;
     if (hasRule()) {
       if (!getRule()
@@ -217,6 +288,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasCampaignId()) {
+      hash = (37 * hash) + CAMPAIGN_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCampaignId().hashCode();
+    }
     if (hasRule()) {
       hash = (37 * hash) + RULE_FIELD_NUMBER;
       hash = (53 * hash) + getRule().hashCode();
@@ -372,6 +447,7 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      campaignId_ = "";
       rule_ = null;
       if (ruleBuilder_ != null) {
         ruleBuilder_.dispose();
@@ -388,7 +464,7 @@ private static final long serialVersionUID = 0L;
         target_ = null;
         targetBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -423,9 +499,9 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartialRepeatedFields(Campaign result) {
       if (targetBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           target_ = java.util.Collections.unmodifiableList(target_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.target_ = target_;
       } else {
@@ -437,16 +513,20 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.rule_ = ruleBuilder_ == null
-            ? rule_
-            : ruleBuilder_.build();
+        result.campaignId_ = campaignId_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rule_ = ruleBuilder_ == null
+            ? rule_
+            : ruleBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.schedule_ = scheduleBuilder_ == null
             ? schedule_
             : scheduleBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -495,6 +575,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(Campaign other) {
       if (other == Campaign.getDefaultInstance()) return this;
+      if (other.hasCampaignId()) {
+        campaignId_ = other.campaignId_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       if (other.hasRule()) {
         mergeRule(other.getRule());
       }
@@ -505,7 +590,7 @@ private static final long serialVersionUID = 0L;
         if (!other.target_.isEmpty()) {
           if (target_.isEmpty()) {
             target_ = other.target_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureTargetIsMutable();
             target_.addAll(other.target_);
@@ -518,7 +603,7 @@ private static final long serialVersionUID = 0L;
             targetBuilder_.dispose();
             targetBuilder_ = null;
             target_ = other.target_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             targetBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTargetFieldBuilder() : null;
@@ -554,20 +639,25 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              input.readMessage(
-                  getRuleFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              campaignId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               input.readMessage(
-                  getScheduleFieldBuilder().getBuilder(),
+                  getRuleFieldBuilder().getBuilder(),
                   extensionRegistry);
               bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
+              input.readMessage(
+                  getScheduleFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
+            case 34: {
               Target m =
                   input.readMessage(
                       Target.parser(),
@@ -579,7 +669,7 @@ private static final long serialVersionUID = 0L;
                 targetBuilder_.addMessage(m);
               }
               break;
-            } // case 26
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -597,18 +687,121 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
+    private java.lang.Object campaignId_ = "";
+    /**
+     * <pre>
+     * Add this line
+     * </pre>
+     *
+     * <code>optional string campaign_id = 1;</code>
+     * @return Whether the campaignId field is set.
+     */
+    public boolean hasCampaignId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * Add this line
+     * </pre>
+     *
+     * <code>optional string campaign_id = 1;</code>
+     * @return The campaignId.
+     */
+    public java.lang.String getCampaignId() {
+      java.lang.Object ref = campaignId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        campaignId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Add this line
+     * </pre>
+     *
+     * <code>optional string campaign_id = 1;</code>
+     * @return The bytes for campaignId.
+     */
+    public com.google.protobuf.ByteString
+        getCampaignIdBytes() {
+      java.lang.Object ref = campaignId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        campaignId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Add this line
+     * </pre>
+     *
+     * <code>optional string campaign_id = 1;</code>
+     * @param value The campaignId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCampaignId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      campaignId_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Add this line
+     * </pre>
+     *
+     * <code>optional string campaign_id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCampaignId() {
+      campaignId_ = getDefaultInstance().getCampaignId();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Add this line
+     * </pre>
+     *
+     * <code>optional string campaign_id = 1;</code>
+     * @param value The bytes for campaignId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCampaignIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      campaignId_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
     private Rule rule_;
     private com.google.protobuf.SingleFieldBuilderV3<
         Rule, Rule.Builder, RuleOrBuilder> ruleBuilder_;
     /**
-     * <code>optional .Rule rule = 1;</code>
+     * <code>optional .Rule rule = 2;</code>
      * @return Whether the rule field is set.
      */
     public boolean hasRule() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional .Rule rule = 1;</code>
+     * <code>optional .Rule rule = 2;</code>
      * @return The rule.
      */
     public Rule getRule() {
@@ -619,7 +812,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional .Rule rule = 1;</code>
+     * <code>optional .Rule rule = 2;</code>
      */
     public Builder setRule(Rule value) {
       if (ruleBuilder_ == null) {
@@ -630,12 +823,12 @@ private static final long serialVersionUID = 0L;
       } else {
         ruleBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .Rule rule = 1;</code>
+     * <code>optional .Rule rule = 2;</code>
      */
     public Builder setRule(
         Rule.Builder builderForValue) {
@@ -644,16 +837,16 @@ private static final long serialVersionUID = 0L;
       } else {
         ruleBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .Rule rule = 1;</code>
+     * <code>optional .Rule rule = 2;</code>
      */
     public Builder mergeRule(Rule value) {
       if (ruleBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0) &&
+        if (((bitField0_ & 0x00000002) != 0) &&
           rule_ != null &&
           rule_ != Rule.getDefaultInstance()) {
           getRuleBuilder().mergeFrom(value);
@@ -664,16 +857,16 @@ private static final long serialVersionUID = 0L;
         ruleBuilder_.mergeFrom(value);
       }
       if (rule_ != null) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>optional .Rule rule = 1;</code>
+     * <code>optional .Rule rule = 2;</code>
      */
     public Builder clearRule() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       rule_ = null;
       if (ruleBuilder_ != null) {
         ruleBuilder_.dispose();
@@ -683,15 +876,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional .Rule rule = 1;</code>
+     * <code>optional .Rule rule = 2;</code>
      */
     public Rule.Builder getRuleBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRuleFieldBuilder().getBuilder();
     }
     /**
-     * <code>optional .Rule rule = 1;</code>
+     * <code>optional .Rule rule = 2;</code>
      */
     public RuleOrBuilder getRuleOrBuilder() {
       if (ruleBuilder_ != null) {
@@ -702,7 +895,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional .Rule rule = 1;</code>
+     * <code>optional .Rule rule = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         Rule, Rule.Builder, RuleOrBuilder> 
@@ -722,14 +915,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         Schedule, Schedule.Builder, ScheduleOrBuilder> scheduleBuilder_;
     /**
-     * <code>optional .Schedule schedule = 2;</code>
+     * <code>optional .Schedule schedule = 3;</code>
      * @return Whether the schedule field is set.
      */
     public boolean hasSchedule() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional .Schedule schedule = 2;</code>
+     * <code>optional .Schedule schedule = 3;</code>
      * @return The schedule.
      */
     public Schedule getSchedule() {
@@ -740,7 +933,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional .Schedule schedule = 2;</code>
+     * <code>optional .Schedule schedule = 3;</code>
      */
     public Builder setSchedule(Schedule value) {
       if (scheduleBuilder_ == null) {
@@ -751,12 +944,12 @@ private static final long serialVersionUID = 0L;
       } else {
         scheduleBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .Schedule schedule = 2;</code>
+     * <code>optional .Schedule schedule = 3;</code>
      */
     public Builder setSchedule(
         Schedule.Builder builderForValue) {
@@ -765,16 +958,16 @@ private static final long serialVersionUID = 0L;
       } else {
         scheduleBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .Schedule schedule = 2;</code>
+     * <code>optional .Schedule schedule = 3;</code>
      */
     public Builder mergeSchedule(Schedule value) {
       if (scheduleBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0) &&
+        if (((bitField0_ & 0x00000004) != 0) &&
           schedule_ != null &&
           schedule_ != Schedule.getDefaultInstance()) {
           getScheduleBuilder().mergeFrom(value);
@@ -785,16 +978,16 @@ private static final long serialVersionUID = 0L;
         scheduleBuilder_.mergeFrom(value);
       }
       if (schedule_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>optional .Schedule schedule = 2;</code>
+     * <code>optional .Schedule schedule = 3;</code>
      */
     public Builder clearSchedule() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       schedule_ = null;
       if (scheduleBuilder_ != null) {
         scheduleBuilder_.dispose();
@@ -804,15 +997,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional .Schedule schedule = 2;</code>
+     * <code>optional .Schedule schedule = 3;</code>
      */
     public Schedule.Builder getScheduleBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getScheduleFieldBuilder().getBuilder();
     }
     /**
-     * <code>optional .Schedule schedule = 2;</code>
+     * <code>optional .Schedule schedule = 3;</code>
      */
     public ScheduleOrBuilder getScheduleOrBuilder() {
       if (scheduleBuilder_ != null) {
@@ -823,7 +1016,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional .Schedule schedule = 2;</code>
+     * <code>optional .Schedule schedule = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         Schedule, Schedule.Builder, ScheduleOrBuilder> 
@@ -842,9 +1035,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<Target> target_ =
       java.util.Collections.emptyList();
     private void ensureTargetIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         target_ = new java.util.ArrayList<Target>(target_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
        }
     }
 
@@ -852,7 +1045,7 @@ private static final long serialVersionUID = 0L;
         Target, Target.Builder, TargetOrBuilder> targetBuilder_;
 
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public java.util.List<Target> getTargetList() {
       if (targetBuilder_ == null) {
@@ -862,7 +1055,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public int getTargetCount() {
       if (targetBuilder_ == null) {
@@ -872,7 +1065,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public Target getTarget(int index) {
       if (targetBuilder_ == null) {
@@ -882,7 +1075,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public Builder setTarget(
         int index, Target value) {
@@ -899,7 +1092,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public Builder setTarget(
         int index, Target.Builder builderForValue) {
@@ -913,7 +1106,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public Builder addTarget(Target value) {
       if (targetBuilder_ == null) {
@@ -929,7 +1122,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public Builder addTarget(
         int index, Target value) {
@@ -946,7 +1139,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public Builder addTarget(
         Target.Builder builderForValue) {
@@ -960,7 +1153,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public Builder addTarget(
         int index, Target.Builder builderForValue) {
@@ -974,7 +1167,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public Builder addAllTarget(
         java.lang.Iterable<? extends Target> values) {
@@ -989,12 +1182,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public Builder clearTarget() {
       if (targetBuilder_ == null) {
         target_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         targetBuilder_.clear();
@@ -1002,7 +1195,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public Builder removeTarget(int index) {
       if (targetBuilder_ == null) {
@@ -1015,14 +1208,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public Target.Builder getTargetBuilder(
         int index) {
       return getTargetFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public TargetOrBuilder getTargetOrBuilder(
         int index) {
@@ -1032,7 +1225,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public java.util.List<? extends TargetOrBuilder> 
          getTargetOrBuilderList() {
@@ -1043,14 +1236,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public Target.Builder addTargetBuilder() {
       return getTargetFieldBuilder().addBuilder(
           Target.getDefaultInstance());
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public Target.Builder addTargetBuilder(
         int index) {
@@ -1058,7 +1251,7 @@ private static final long serialVersionUID = 0L;
           index, Target.getDefaultInstance());
     }
     /**
-     * <code>repeated .Target target = 3;</code>
+     * <code>repeated .Target target = 4;</code>
      */
     public java.util.List<Target.Builder> 
          getTargetBuilderList() {
@@ -1071,7 +1264,7 @@ private static final long serialVersionUID = 0L;
         targetBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             Target, Target.Builder, TargetOrBuilder>(
                 target_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         target_ = null;

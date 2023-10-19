@@ -94,10 +94,11 @@ public final class CampaignProto {
       "t_id\030\001 \001(\tH\000\210\001\001\022\025\n\010shelf_id\030\002 \001(\tH\001\210\001\001B\r" +
       "\n\013_content_idB\013\n\t_shelf_id\"8\n\022Notificati" +
       "onTarget\022\025\n\010shelf_id\030\001 \001(\tH\000\210\001\001B\013\n\t_shel" +
-      "f_id\"u\n\010Campaign\022\030\n\004rule\030\001 \001(\0132\005.RuleH\000\210" +
-      "\001\001\022 \n\010schedule\030\002 \001(\0132\t.ScheduleH\001\210\001\001\022\027\n\006" +
-      "target\030\003 \003(\0132\007.TargetB\007\n\005_ruleB\013\n\t_sched" +
-      "uleB\021B\rCampaignProtoP\001b\006proto3"
+      "f_id\"\237\001\n\010Campaign\022\030\n\013campaign_id\030\001 \001(\tH\000" +
+      "\210\001\001\022\030\n\004rule\030\002 \001(\0132\005.RuleH\001\210\001\001\022 \n\010schedul" +
+      "e\030\003 \001(\0132\t.ScheduleH\002\210\001\001\022\027\n\006target\030\004 \003(\0132" +
+      "\007.TargetB\016\n\014_campaign_idB\007\n\005_ruleB\013\n\t_sc" +
+      "heduleB\021B\rCampaignProtoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -162,7 +163,7 @@ public final class CampaignProto {
     internal_static_Campaign_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Campaign_descriptor,
-        new java.lang.String[] { "Rule", "Schedule", "Target", "Rule", "Schedule", });
+        new java.lang.String[] { "CampaignId", "Rule", "Schedule", "Target", "CampaignId", "Rule", "Schedule", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
