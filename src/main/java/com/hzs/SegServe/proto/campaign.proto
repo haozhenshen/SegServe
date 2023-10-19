@@ -1,5 +1,5 @@
 syntax = "proto3";
-
+package com.hzs.SegServe.proto;
 option java_outer_classname = "CampaignProto";
 option java_multiple_files = true;
 
@@ -66,7 +66,8 @@ message NotificationTarget {
 
 // Represents a Campaign with segmentation rules and targets
 message Campaign {
-  optional Rule rule = 1;
-  optional Schedule schedule = 2;
-  repeated Target target = 3;
+  optional string campaign_id = 1; // Add this line
+  optional Rule rule = 2;
+  optional Schedule schedule = 3;
+  repeated Target target = 4;
 }
