@@ -119,45 +119,6 @@ public class CampaignController {
         }
     }
 
-    // Find campaigns by a specific rule
-//    @GetMapping("/rule")
-//    public ResponseEntity<List<Campaign>> findCampaignsByRule(
-//            @RequestParam(name = "content_id", required = false) String contentId,
-//            @RequestParam(name = "subscription_id", required = false) String subscriptionId,
-//            @RequestParam(name = "plan_name", required = false) String planName,
-//            @RequestParam(name = "last_login_date", required = false) String lastLoginDate) {
-//
-//        // Create a Rule object based on the query parameters
-//        Rule.Builder ruleBuilder = Rule.newBuilder();
-//
-//        if (contentId != null) {
-//            ruleBuilder.getPlayActivityRuleBuilder().setContentId(contentId);
-//        }
-//
-//        if (subscriptionId != null || planName != null) {
-//            SubscriptionRule.Builder subscriptionRuleBuilder = SubscriptionRule.newBuilder();
-//            if (subscriptionId != null) {
-//                subscriptionRuleBuilder.setSubscriptionId(subscriptionId);
-//            }
-//            if (planName != null) {
-//                subscriptionRuleBuilder.setPlanName(planName);
-//            }
-//            ruleBuilder.setSubscriptionRule(subscriptionRuleBuilder);
-//        }
-//
-//        if (lastLoginDate != null) {
-//            LoginActivityRule.Builder loginActivityRuleBuilder = LoginActivityRule.newBuilder();
-//            loginActivityRuleBuilder.setLastLoginDate(lastLoginDate);
-//            ruleBuilder.setLoginActivityRule(loginActivityRuleBuilder);
-//        }
-//
-//        Rule rule = ruleBuilder.build();
-//
-//        // Use the rule to filter campaigns
-//        List<Campaign> campaigns = campaignService.findCampaignsByRule(rule);
-//
-//        return new ResponseEntity<>(campaigns, HttpStatus.OK);
-//    }
 
     // Delete a campaign by its ID
     @DeleteMapping("/{id}")

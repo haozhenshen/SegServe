@@ -16,12 +16,15 @@ public class CampaignDAO {
 
     private String campaignName;
 
+    private String ruleId;
+
     private Campaign campaign;
 
     @JsonCreator
     public CampaignDAO(Campaign campaign) {
         this.id = campaign.getCampaignId();
-//        this.name = campaign.getCampaignName();
+        this.campaignName = campaign.getCampaignName();
+        this.ruleId = campaign.getRuleId();
         this.campaign = campaign;
     }
 }
