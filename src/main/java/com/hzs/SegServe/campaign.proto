@@ -1,5 +1,5 @@
 syntax = "proto3";
-package com.hzs.SegServe.proto;
+package proto;
 option java_outer_classname = "CampaignProto";
 option java_multiple_files = true;
 
@@ -24,10 +24,11 @@ message LoginActivityRule {
 
 // Represents a Rule used in segmentation
 message Rule {
+  optional string rule_id = 1;
   oneof rule {
-    PlayActivityRule play_activity_rule = 1;
-    SubscriptionRule subscription_rule = 2;
-    LoginActivityRule login_activity_rule = 3;
+    PlayActivityRule play_activity_rule = 2;
+    SubscriptionRule subscription_rule = 3;
+    LoginActivityRule login_activity_rule = 4;
   }
 }
 
@@ -41,7 +42,7 @@ message Schedule {
 
 // Represents a Target used in segmentation
 message Target {
-  oneof rule {
+  oneof target {
     HomePageShelfTarget home_page = 1;
     PostPlayShelfTarget post_play = 2;
     NotificationTarget notification = 3;
@@ -67,7 +68,7 @@ message NotificationTarget {
 // Represents a Campaign with segmentation rules and targets
 message Campaign {
   optional string campaign_id = 1; // Add this line
-  optional Rule rule = 2;
+  optional string rule_id = 2;
   optional Schedule schedule = 3;
   repeated Target target = 4;
 }

@@ -1,7 +1,9 @@
 package com.hzs.SegServe.service;
 
-import com.hzs.SegServe.proto.Rule;
+import com.hzs.SegServe.model.CampaignDAO;
+import com.hzs.SegServe.proto.Campaign;
 import com.hzs.SegServe.repository.CampaignRepository;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,30 +21,43 @@ public class CampaignService {
     }
 
     // Create a new campaign
-    public Campaign createCampaign(Campaign campaign) {
-        return campaignRepository.save(campaign);
+    public CampaignDAO createCampaign(Campaign campaign) {
+        ObjectId uid = new ObjectId();
+
+        // Convert the Campaign to a mutable builder
+        Campaign.Builder campaignBuilder = campaign.toBuilder();
+
+        // Set the campaign_id field using the builder
+        campaignBuilder.setCampaignId(uid.toString());
+
+        // Build the Campaign object from the builder
+        Campaign updatedCampaign = campaignBuilder.build();
+
+        // Save the updated campaign to MongoDB
+
+        return campaignRepository.save( new CampaignDAO(updatedCampaign));
     }
 
     // Retrieve all campaigns
-    public List<Campaign> getAllCampaigns() {
+    public List<CampaignDAO> getAllCampaigns() {
         return campaignRepository.findAll();
     }
 
     // Retrieve a campaign by its ID
-    public Optional<Campaign> getCampaignById(String id) {
-        return campaignRepository.findById(id);
+    public Optional<CampaignDAO> getCampaignById(String campaignId) {
+        return campaignRepository.findById(campaignId);
     }
 
     // Find campaigns by a specific rule
-    public List<Campaign> findCampaignsByRule(Rule rule) {
-        return campaignRepository.findByRule(rule);
-    }
+//    public List<Campaign> findCampaignsByRule(Rule rule) {
+//        return campaignRepository.findByRule(rule);
+//    }
 
-    public Optional<Campaign> updateCampaign(String id, Campaign campaign) {
-        Optional<Campaign> existingCampaign = getCampaignById(id);
+    public Optional<CampaignDAO> updateCampaign(String id, Campaign campaign) {
+        Optional<CampaignDAO> existingCampaign = getCampaignById(id);
 
         if (existingCampaign.isPresent()) {
-            return Optional.of(campaignRepository.save(campaign));
+            return Optional.of(campaignRepository.save(new CampaignDAO(campaign)));
         } else {
             // Campaign with the given ID does not exist
             return Optional.empty();
@@ -50,7 +65,7 @@ public class CampaignService {
     }
 
     // Delete a campaign by its ID
-    public void deleteCampaignById(String id) {
-        campaignRepository.deleteById(id);
+    public void  deleteCampaignById(String campaignId) {
+        campaignRepository.deleteById(campaignId);
     }
 }
