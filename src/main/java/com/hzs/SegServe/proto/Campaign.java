@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private Campaign() {
     campaignId_ = "";
+    campaignName_ = "";
     ruleId_ = "";
     target_ = java.util.Collections.emptyList();
   }
@@ -50,10 +51,6 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object campaignId_ = "";
   /**
-   * <pre>
-   * Add this line
-   * </pre>
-   *
    * <code>optional string campaign_id = 1;</code>
    * @return Whether the campaignId field is set.
    */
@@ -62,10 +59,6 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <pre>
-   * Add this line
-   * </pre>
-   *
    * <code>optional string campaign_id = 1;</code>
    * @return The campaignId.
    */
@@ -83,10 +76,6 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * Add this line
-   * </pre>
-   *
    * <code>optional string campaign_id = 1;</code>
    * @return The bytes for campaignId.
    */
@@ -105,19 +94,66 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int RULE_ID_FIELD_NUMBER = 2;
+  public static final int CAMPAIGN_NAME_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object campaignName_ = "";
+  /**
+   * <code>optional string campaign_name = 2;</code>
+   * @return Whether the campaignName field is set.
+   */
+  @java.lang.Override
+  public boolean hasCampaignName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <code>optional string campaign_name = 2;</code>
+   * @return The campaignName.
+   */
+  @java.lang.Override
+  public java.lang.String getCampaignName() {
+    java.lang.Object ref = campaignName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      campaignName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string campaign_name = 2;</code>
+   * @return The bytes for campaignName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCampaignNameBytes() {
+    java.lang.Object ref = campaignName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      campaignName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RULE_ID_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
   private volatile java.lang.Object ruleId_ = "";
   /**
-   * <code>optional string rule_id = 2;</code>
+   * <code>optional string rule_id = 3;</code>
    * @return Whether the ruleId field is set.
    */
   @java.lang.Override
   public boolean hasRuleId() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>optional string rule_id = 2;</code>
+   * <code>optional string rule_id = 3;</code>
    * @return The ruleId.
    */
   @java.lang.Override
@@ -134,7 +170,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>optional string rule_id = 2;</code>
+   * <code>optional string rule_id = 3;</code>
    * @return The bytes for ruleId.
    */
   @java.lang.Override
@@ -152,18 +188,18 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SCHEDULE_FIELD_NUMBER = 3;
+  public static final int SCHEDULE_FIELD_NUMBER = 4;
   private com.hzs.SegServe.proto.Schedule schedule_;
   /**
-   * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 3;</code>
+   * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 4;</code>
    * @return Whether the schedule field is set.
    */
   @java.lang.Override
   public boolean hasSchedule() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 3;</code>
+   * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 4;</code>
    * @return The schedule.
    */
   @java.lang.Override
@@ -171,25 +207,25 @@ private static final long serialVersionUID = 0L;
     return schedule_ == null ? com.hzs.SegServe.proto.Schedule.getDefaultInstance() : schedule_;
   }
   /**
-   * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 3;</code>
+   * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 4;</code>
    */
   @java.lang.Override
   public com.hzs.SegServe.proto.ScheduleOrBuilder getScheduleOrBuilder() {
     return schedule_ == null ? com.hzs.SegServe.proto.Schedule.getDefaultInstance() : schedule_;
   }
 
-  public static final int TARGET_FIELD_NUMBER = 4;
+  public static final int TARGET_FIELD_NUMBER = 5;
   @SuppressWarnings("serial")
   private java.util.List<com.hzs.SegServe.proto.Target> target_;
   /**
-   * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+   * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
    */
   @java.lang.Override
   public java.util.List<com.hzs.SegServe.proto.Target> getTargetList() {
     return target_;
   }
   /**
-   * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+   * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.hzs.SegServe.proto.TargetOrBuilder> 
@@ -197,21 +233,21 @@ private static final long serialVersionUID = 0L;
     return target_;
   }
   /**
-   * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+   * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
    */
   @java.lang.Override
   public int getTargetCount() {
     return target_.size();
   }
   /**
-   * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+   * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
    */
   @java.lang.Override
   public com.hzs.SegServe.proto.Target getTarget(int index) {
     return target_.get(index);
   }
   /**
-   * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+   * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
    */
   @java.lang.Override
   public com.hzs.SegServe.proto.TargetOrBuilder getTargetOrBuilder(
@@ -237,13 +273,16 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, campaignId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ruleId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, campaignName_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeMessage(3, getSchedule());
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ruleId_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(4, getSchedule());
     }
     for (int i = 0; i < target_.size(); i++) {
-      output.writeMessage(4, target_.get(i));
+      output.writeMessage(5, target_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -258,15 +297,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, campaignId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ruleId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, campaignName_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ruleId_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getSchedule());
+        .computeMessageSize(4, getSchedule());
     }
     for (int i = 0; i < target_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, target_.get(i));
+        .computeMessageSize(5, target_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -287,6 +329,11 @@ private static final long serialVersionUID = 0L;
     if (hasCampaignId()) {
       if (!getCampaignId()
           .equals(other.getCampaignId())) return false;
+    }
+    if (hasCampaignName() != other.hasCampaignName()) return false;
+    if (hasCampaignName()) {
+      if (!getCampaignName()
+          .equals(other.getCampaignName())) return false;
     }
     if (hasRuleId() != other.hasRuleId()) return false;
     if (hasRuleId()) {
@@ -314,6 +361,10 @@ private static final long serialVersionUID = 0L;
     if (hasCampaignId()) {
       hash = (37 * hash) + CAMPAIGN_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCampaignId().hashCode();
+    }
+    if (hasCampaignName()) {
+      hash = (37 * hash) + CAMPAIGN_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getCampaignName().hashCode();
     }
     if (hasRuleId()) {
       hash = (37 * hash) + RULE_ID_FIELD_NUMBER;
@@ -470,6 +521,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       campaignId_ = "";
+      campaignName_ = "";
       ruleId_ = "";
       schedule_ = null;
       if (scheduleBuilder_ != null) {
@@ -482,7 +534,7 @@ private static final long serialVersionUID = 0L;
         target_ = null;
         targetBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -517,9 +569,9 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartialRepeatedFields(com.hzs.SegServe.proto.Campaign result) {
       if (targetBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           target_ = java.util.Collections.unmodifiableList(target_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.target_ = target_;
       } else {
@@ -535,14 +587,18 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.ruleId_ = ruleId_;
+        result.campaignName_ = campaignName_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ruleId_ = ruleId_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.schedule_ = scheduleBuilder_ == null
             ? schedule_
             : scheduleBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -596,9 +652,14 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasCampaignName()) {
+        campaignName_ = other.campaignName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (other.hasRuleId()) {
         ruleId_ = other.ruleId_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasSchedule()) {
@@ -608,7 +669,7 @@ private static final long serialVersionUID = 0L;
         if (!other.target_.isEmpty()) {
           if (target_.isEmpty()) {
             target_ = other.target_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureTargetIsMutable();
             target_.addAll(other.target_);
@@ -621,7 +682,7 @@ private static final long serialVersionUID = 0L;
             targetBuilder_.dispose();
             targetBuilder_ = null;
             target_ = other.target_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             targetBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTargetFieldBuilder() : null;
@@ -662,18 +723,23 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 10
             case 18: {
-              ruleId_ = input.readStringRequireUtf8();
+              campaignName_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
-              input.readMessage(
-                  getScheduleFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              ruleId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
+              input.readMessage(
+                  getScheduleFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
+            case 42: {
               com.hzs.SegServe.proto.Target m =
                   input.readMessage(
                       com.hzs.SegServe.proto.Target.parser(),
@@ -685,7 +751,7 @@ private static final long serialVersionUID = 0L;
                 targetBuilder_.addMessage(m);
               }
               break;
-            } // case 34
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -705,10 +771,6 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object campaignId_ = "";
     /**
-     * <pre>
-     * Add this line
-     * </pre>
-     *
      * <code>optional string campaign_id = 1;</code>
      * @return Whether the campaignId field is set.
      */
@@ -716,10 +778,6 @@ private static final long serialVersionUID = 0L;
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <pre>
-     * Add this line
-     * </pre>
-     *
      * <code>optional string campaign_id = 1;</code>
      * @return The campaignId.
      */
@@ -736,10 +794,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Add this line
-     * </pre>
-     *
      * <code>optional string campaign_id = 1;</code>
      * @return The bytes for campaignId.
      */
@@ -757,10 +811,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Add this line
-     * </pre>
-     *
      * <code>optional string campaign_id = 1;</code>
      * @param value The campaignId to set.
      * @return This builder for chaining.
@@ -774,10 +824,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Add this line
-     * </pre>
-     *
      * <code>optional string campaign_id = 1;</code>
      * @return This builder for chaining.
      */
@@ -788,10 +834,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Add this line
-     * </pre>
-     *
      * <code>optional string campaign_id = 1;</code>
      * @param value The bytes for campaignId to set.
      * @return This builder for chaining.
@@ -806,16 +848,95 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object ruleId_ = "";
+    private java.lang.Object campaignName_ = "";
     /**
-     * <code>optional string rule_id = 2;</code>
-     * @return Whether the ruleId field is set.
+     * <code>optional string campaign_name = 2;</code>
+     * @return Whether the campaignName field is set.
      */
-    public boolean hasRuleId() {
+    public boolean hasCampaignName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional string rule_id = 2;</code>
+     * <code>optional string campaign_name = 2;</code>
+     * @return The campaignName.
+     */
+    public java.lang.String getCampaignName() {
+      java.lang.Object ref = campaignName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        campaignName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string campaign_name = 2;</code>
+     * @return The bytes for campaignName.
+     */
+    public com.google.protobuf.ByteString
+        getCampaignNameBytes() {
+      java.lang.Object ref = campaignName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        campaignName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string campaign_name = 2;</code>
+     * @param value The campaignName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCampaignName(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      campaignName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string campaign_name = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCampaignName() {
+      campaignName_ = getDefaultInstance().getCampaignName();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string campaign_name = 2;</code>
+     * @param value The bytes for campaignName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCampaignNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      campaignName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ruleId_ = "";
+    /**
+     * <code>optional string rule_id = 3;</code>
+     * @return Whether the ruleId field is set.
+     */
+    public boolean hasRuleId() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional string rule_id = 3;</code>
      * @return The ruleId.
      */
     public java.lang.String getRuleId() {
@@ -831,7 +952,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string rule_id = 2;</code>
+     * <code>optional string rule_id = 3;</code>
      * @return The bytes for ruleId.
      */
     public com.google.protobuf.ByteString
@@ -848,7 +969,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional string rule_id = 2;</code>
+     * <code>optional string rule_id = 3;</code>
      * @param value The ruleId to set.
      * @return This builder for chaining.
      */
@@ -856,22 +977,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       ruleId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string rule_id = 2;</code>
+     * <code>optional string rule_id = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearRuleId() {
       ruleId_ = getDefaultInstance().getRuleId();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>optional string rule_id = 2;</code>
+     * <code>optional string rule_id = 3;</code>
      * @param value The bytes for ruleId to set.
      * @return This builder for chaining.
      */
@@ -880,7 +1001,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       ruleId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -889,14 +1010,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.hzs.SegServe.proto.Schedule, com.hzs.SegServe.proto.Schedule.Builder, com.hzs.SegServe.proto.ScheduleOrBuilder> scheduleBuilder_;
     /**
-     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 3;</code>
+     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 4;</code>
      * @return Whether the schedule field is set.
      */
     public boolean hasSchedule() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 3;</code>
+     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 4;</code>
      * @return The schedule.
      */
     public com.hzs.SegServe.proto.Schedule getSchedule() {
@@ -907,7 +1028,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 3;</code>
+     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 4;</code>
      */
     public Builder setSchedule(com.hzs.SegServe.proto.Schedule value) {
       if (scheduleBuilder_ == null) {
@@ -918,12 +1039,12 @@ private static final long serialVersionUID = 0L;
       } else {
         scheduleBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 3;</code>
+     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 4;</code>
      */
     public Builder setSchedule(
         com.hzs.SegServe.proto.Schedule.Builder builderForValue) {
@@ -932,16 +1053,16 @@ private static final long serialVersionUID = 0L;
       } else {
         scheduleBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 3;</code>
+     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 4;</code>
      */
     public Builder mergeSchedule(com.hzs.SegServe.proto.Schedule value) {
       if (scheduleBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0) &&
+        if (((bitField0_ & 0x00000008) != 0) &&
           schedule_ != null &&
           schedule_ != com.hzs.SegServe.proto.Schedule.getDefaultInstance()) {
           getScheduleBuilder().mergeFrom(value);
@@ -952,16 +1073,16 @@ private static final long serialVersionUID = 0L;
         scheduleBuilder_.mergeFrom(value);
       }
       if (schedule_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 3;</code>
+     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 4;</code>
      */
     public Builder clearSchedule() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       schedule_ = null;
       if (scheduleBuilder_ != null) {
         scheduleBuilder_.dispose();
@@ -971,15 +1092,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 3;</code>
+     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 4;</code>
      */
     public com.hzs.SegServe.proto.Schedule.Builder getScheduleBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getScheduleFieldBuilder().getBuilder();
     }
     /**
-     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 3;</code>
+     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 4;</code>
      */
     public com.hzs.SegServe.proto.ScheduleOrBuilder getScheduleOrBuilder() {
       if (scheduleBuilder_ != null) {
@@ -990,7 +1111,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 3;</code>
+     * <code>optional .com.hzs.SegServe.proto.Schedule schedule = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.hzs.SegServe.proto.Schedule, com.hzs.SegServe.proto.Schedule.Builder, com.hzs.SegServe.proto.ScheduleOrBuilder> 
@@ -1009,9 +1130,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.hzs.SegServe.proto.Target> target_ =
       java.util.Collections.emptyList();
     private void ensureTargetIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         target_ = new java.util.ArrayList<com.hzs.SegServe.proto.Target>(target_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
        }
     }
 
@@ -1019,7 +1140,7 @@ private static final long serialVersionUID = 0L;
         com.hzs.SegServe.proto.Target, com.hzs.SegServe.proto.Target.Builder, com.hzs.SegServe.proto.TargetOrBuilder> targetBuilder_;
 
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public java.util.List<com.hzs.SegServe.proto.Target> getTargetList() {
       if (targetBuilder_ == null) {
@@ -1029,7 +1150,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public int getTargetCount() {
       if (targetBuilder_ == null) {
@@ -1039,7 +1160,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public com.hzs.SegServe.proto.Target getTarget(int index) {
       if (targetBuilder_ == null) {
@@ -1049,7 +1170,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public Builder setTarget(
         int index, com.hzs.SegServe.proto.Target value) {
@@ -1066,7 +1187,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public Builder setTarget(
         int index, com.hzs.SegServe.proto.Target.Builder builderForValue) {
@@ -1080,7 +1201,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public Builder addTarget(com.hzs.SegServe.proto.Target value) {
       if (targetBuilder_ == null) {
@@ -1096,7 +1217,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public Builder addTarget(
         int index, com.hzs.SegServe.proto.Target value) {
@@ -1113,7 +1234,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public Builder addTarget(
         com.hzs.SegServe.proto.Target.Builder builderForValue) {
@@ -1127,7 +1248,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public Builder addTarget(
         int index, com.hzs.SegServe.proto.Target.Builder builderForValue) {
@@ -1141,7 +1262,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public Builder addAllTarget(
         java.lang.Iterable<? extends com.hzs.SegServe.proto.Target> values) {
@@ -1156,12 +1277,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public Builder clearTarget() {
       if (targetBuilder_ == null) {
         target_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         targetBuilder_.clear();
@@ -1169,7 +1290,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public Builder removeTarget(int index) {
       if (targetBuilder_ == null) {
@@ -1182,14 +1303,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public com.hzs.SegServe.proto.Target.Builder getTargetBuilder(
         int index) {
       return getTargetFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public com.hzs.SegServe.proto.TargetOrBuilder getTargetOrBuilder(
         int index) {
@@ -1199,7 +1320,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public java.util.List<? extends com.hzs.SegServe.proto.TargetOrBuilder> 
          getTargetOrBuilderList() {
@@ -1210,14 +1331,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public com.hzs.SegServe.proto.Target.Builder addTargetBuilder() {
       return getTargetFieldBuilder().addBuilder(
           com.hzs.SegServe.proto.Target.getDefaultInstance());
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public com.hzs.SegServe.proto.Target.Builder addTargetBuilder(
         int index) {
@@ -1225,7 +1346,7 @@ private static final long serialVersionUID = 0L;
           index, com.hzs.SegServe.proto.Target.getDefaultInstance());
     }
     /**
-     * <code>repeated .com.hzs.SegServe.proto.Target target = 4;</code>
+     * <code>repeated .com.hzs.SegServe.proto.Target target = 5;</code>
      */
     public java.util.List<com.hzs.SegServe.proto.Target.Builder> 
          getTargetBuilderList() {
@@ -1238,7 +1359,7 @@ private static final long serialVersionUID = 0L;
         targetBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.hzs.SegServe.proto.Target, com.hzs.SegServe.proto.Target.Builder, com.hzs.SegServe.proto.TargetOrBuilder>(
                 target_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         target_ = null;
