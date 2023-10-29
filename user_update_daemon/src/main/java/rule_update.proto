@@ -1,0 +1,26 @@
+syntax = "proto3";
+package com.hzs.user_update_daemon.proto;
+
+option java_outer_classname = "RuleUpdateProto";
+option java_multiple_files = true;
+
+message RuleUpdate {
+  string rule_id = 1;
+  string rule_name = 2;
+  int32 rule_version = 3;
+}
+
+message UserRangeRuleUpdate {
+  string rule_id = 1;
+  string rule_name = 2;
+  int32 rule_version = 3;
+  int32 min_user_id = 4;
+  int32 max_user_id = 5;
+}
+
+message UserRuleUpdate {
+  int32 user_id = 1;
+  string rule_id = 2;
+  string rule_name = 3;
+  int32 rule_version = 4;
+}
