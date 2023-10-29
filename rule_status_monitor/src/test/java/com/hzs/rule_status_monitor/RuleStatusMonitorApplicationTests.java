@@ -1,10 +1,10 @@
-package com.hzs.rule_staus_monitor;
+package com.hzs.rule_status_monitor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RuleStausMonitorApplicationTests {
+class RuleStatusMonitorApplicationTests {
 
 	@Test
 	void contextLoads() {

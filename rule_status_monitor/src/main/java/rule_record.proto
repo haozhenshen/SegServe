@@ -1,0 +1,35 @@
+syntax = "proto3";
+package com.hzs.rule_status_monitor.proto;
+
+option java_outer_classname = "RuleRecordProto";
+option java_multiple_files = true;
+
+enum Status {
+  UNKNOWN = 0;
+  ACK = 1;
+  ERROR = 2;
+  TIMEOUT = 3;
+  COMPUTING = 4;
+  SUCCESS = 5;
+  FAN_OUT = 6;
+}
+
+message StatusTsPair {
+  Status status = 1;
+  string timestamp = 2;
+  int32 progress = 3; // Progress value between 1 and 100
+}
+
+message RuleRecord {
+  string id = 1;
+  string rule_name = 2;
+  int64 version = 3;
+  string timestamp = 4;
+  Status status = 5; // Use the Status enum for the status field
+  int32 progress = 6; // Progress value between 1 and 100
+  repeated StatusTsPair log = 7;
+}
+
+
+
+
