@@ -1,0 +1,88 @@
+syntax = "proto3";
+package com.hzs.grpc_client.proto;
+option java_outer_classname = "CampaignProto";
+option java_multiple_files = true;
+
+service CampaignService {
+  rpc GetUserCampaigns (UserRequest) returns (UserResponse) {
+
+  }
+}
+
+message UserRequest {
+  string user_id = 1;
+  UserProfile user_profile = 2;
+}
+
+message UserResponse {
+  repeated Campaign campaigns = 1;
+}
+
+message UserProfile {
+  repeated RuleVersionPair ruleVersion = 1;
+}
+
+message RuleVersionPair {
+  string rule_id = 1;
+  int64 version = 2;
+}
+
+message PlayActivityRule {
+  string content_id = 1;
+  int64 progress = 2;
+}
+
+message SubscriptionRule {
+  string subscription_id = 1;
+  string plan_name = 2;
+}
+
+message LoginActivityRule {
+  string last_login_date = 1;
+}
+
+message Rule {
+  string rule_id = 1;
+  string rule_name = 2;
+  oneof rule {
+    PlayActivityRule play_activity_rule = 3;
+    SubscriptionRule subscription_rule = 4;
+    LoginActivityRule login_activity_rule = 5;
+  }
+}
+
+message Schedule {
+  string cron_expression = 1;
+  string time_zone = 2;
+  string job_description = 3;
+  repeated string job_options = 4;
+}
+
+message Target {
+  oneof target {
+    HomePageShelfTarget home_page = 1;
+    PostPlayShelfTarget post_play = 2;
+    NotificationTarget notification = 3;
+  }
+}
+
+message HomePageShelfTarget {
+  string shelf_id = 1;
+}
+
+message PostPlayShelfTarget {
+  string content_id = 1;
+  string shelf_id = 2;
+}
+
+message NotificationTarget {
+  string shelf_id = 1;
+}
+
+message Campaign {
+  string campaign_id = 1;
+  string campaign_name = 2;
+  string rule_id = 3;
+  Schedule schedule = 4;
+  repeated Target target = 5;
+}

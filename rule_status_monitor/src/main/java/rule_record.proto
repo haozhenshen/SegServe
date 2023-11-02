@@ -12,6 +12,7 @@ enum Status {
   COMPUTING = 4;
   SUCCESS = 5;
   FAN_OUT = 6;
+  ACTIVE = 7;
 }
 
 message StatusTsPair {
@@ -20,15 +21,21 @@ message StatusTsPair {
   int32 progress = 3; // Progress value between 1 and 100
 }
 
+message Logs {
+  repeated StatusTsPair log = 1;
+}
+
 message RuleRecord {
   string id = 1;
   string rule_name = 2;
   int64 version = 3;
   string timestamp = 4;
-  Status status = 5; // Use the Status enum for the status field
-  int32 progress = 6; // Progress value between 1 and 100
-  repeated StatusTsPair log = 7;
+  int64 total_user_count = 5;
+  Status status = 6; // Use the Status enum for the status field
+  int32 progress = 7; // Progress value between 1 and 100
+  Logs logs = 8;
 }
+
 
 
 
