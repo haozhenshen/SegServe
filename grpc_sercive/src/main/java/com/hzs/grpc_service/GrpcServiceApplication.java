@@ -1,16 +1,16 @@
-package com.hzs.grpc_client;
+package com.hzs.grpc_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@EnableDiscoveryClient
+
 @SpringBootApplication
-public class GrpcClientApplication {
+@EnableDiscoveryClient
+public class GrpcServiceApplication {
 
 	public static void main(String[] args) {
-
-		SpringApplication.run(GrpcClientApplication.class, args);
+		SpringApplication.run(GrpcServiceApplication.class, args);
 	}
 
 }

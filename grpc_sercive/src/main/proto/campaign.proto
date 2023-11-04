@@ -1,5 +1,7 @@
 syntax = "proto3";
-package com.hzs.grpc_service.proto;
+package model;
+option java_package = "com.hzs.grpc_service.model";
+
 option java_outer_classname = "CampaignProto";
 option java_multiple_files = true;
 
@@ -11,11 +13,11 @@ service CampaignService {
 
 message UserRequest {
   string user_id = 1;
-  UserProfile user_profile = 2;
+//  UserProfile user_profile = 2;
 }
 
 message UserResponse {
-  repeated Campaign campaigns = 1;
+  string res_test = 1;
 }
 
 message UserProfile {
