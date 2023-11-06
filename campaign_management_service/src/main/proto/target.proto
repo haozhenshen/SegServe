@@ -1,0 +1,27 @@
+syntax = "proto3";
+package model;
+
+option java_package = "com.hzs.campaign_management_service.model";
+option java_outer_classname = "TargetProto";
+option java_multiple_files = true;
+
+message Target {
+  oneof target {
+    HomePageShelfTarget home_page = 1;
+    PostPlayShelfTarget post_play = 2;
+    NotificationTarget notification = 3;
+  }
+}
+
+message HomePageShelfTarget {
+  string shelf_id = 1;
+}
+
+message PostPlayShelfTarget {
+  string content_id = 1;
+  string shelf_id = 2;
+}
+
+message NotificationTarget {
+  string shelf_id = 1;
+}

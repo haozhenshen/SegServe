@@ -1,7 +1,7 @@
 package com.hzs.campaign_management_service.service;
 
 import com.hzs.campaign_management_service.model.RuleDAO;
-import com.hzs.campaign_management_service.proto.Rule;
+import com.hzs.campaign_management_service.model.Rule;
 import com.hzs.campaign_management_service.repository.RuleRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;

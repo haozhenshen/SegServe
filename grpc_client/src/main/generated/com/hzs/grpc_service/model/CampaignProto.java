@@ -93,38 +93,40 @@ public final class CampaignProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016campaign.proto\022\005model\"\036\n\013UserRequest\022\017" +
-      "\n\007user_id\030\001 \001(\t\" \n\014UserResponse\022\020\n\010res_t" +
-      "est\030\001 \001(\t\":\n\013UserProfile\022+\n\013ruleVersion\030" +
-      "\001 \003(\0132\026.model.RuleVersionPair\"3\n\017RuleVer" +
-      "sionPair\022\017\n\007rule_id\030\001 \001(\t\022\017\n\007version\030\002 \001" +
-      "(\003\"8\n\020PlayActivityRule\022\022\n\ncontent_id\030\001 \001" +
-      "(\t\022\020\n\010progress\030\002 \001(\003\">\n\020SubscriptionRule" +
-      "\022\027\n\017subscription_id\030\001 \001(\t\022\021\n\tplan_name\030\002" +
-      " \001(\t\",\n\021LoginActivityRule\022\027\n\017last_login_" +
-      "date\030\001 \001(\t\"\330\001\n\004Rule\022\017\n\007rule_id\030\001 \001(\t\022\021\n\t" +
-      "rule_name\030\002 \001(\t\0225\n\022play_activity_rule\030\003 " +
-      "\001(\0132\027.model.PlayActivityRuleH\000\0224\n\021subscr" +
-      "iption_rule\030\004 \001(\0132\027.model.SubscriptionRu" +
-      "leH\000\0227\n\023login_activity_rule\030\005 \001(\0132\030.mode" +
-      "l.LoginActivityRuleH\000B\006\n\004rule\"d\n\010Schedul" +
-      "e\022\027\n\017cron_expression\030\001 \001(\t\022\021\n\ttime_zone\030" +
-      "\002 \001(\t\022\027\n\017job_description\030\003 \001(\t\022\023\n\013job_op" +
-      "tions\030\004 \003(\t\"\247\001\n\006Target\022/\n\thome_page\030\001 \001(" +
-      "\0132\032.model.HomePageShelfTargetH\000\022/\n\tpost_" +
-      "play\030\002 \001(\0132\032.model.PostPlayShelfTargetH\000" +
-      "\0221\n\014notification\030\003 \001(\0132\031.model.Notificat" +
-      "ionTargetH\000B\010\n\006target\"\'\n\023HomePageShelfTa" +
-      "rget\022\020\n\010shelf_id\030\001 \001(\t\";\n\023PostPlayShelfT" +
-      "arget\022\022\n\ncontent_id\030\001 \001(\t\022\020\n\010shelf_id\030\002 " +
-      "\001(\t\"&\n\022NotificationTarget\022\020\n\010shelf_id\030\001 " +
-      "\001(\t\"\211\001\n\010Campaign\022\023\n\013campaign_id\030\001 \001(\t\022\025\n" +
-      "\rcampaign_name\030\002 \001(\t\022\017\n\007rule_id\030\003 \001(\t\022!\n" +
-      "\010schedule\030\004 \001(\0132\017.model.Schedule\022\035\n\006targ" +
-      "et\030\005 \003(\0132\r.model.Target2P\n\017CampaignServi" +
-      "ce\022=\n\020GetUserCampaigns\022\022.model.UserReque" +
-      "st\032\023.model.UserResponse\"\000B-\n\032com.hzs.grp" +
-      "c_service.modelB\rCampaignProtoP\001b\006proto3"
+      "\n\016campaign.proto\022\005model\"H\n\013UserRequest\022\017" +
+      "\n\007user_id\030\001 \001(\t\022(\n\014user_profile\030\002 \001(\0132\022." +
+      "model.UserProfile\"2\n\014UserResponse\022\"\n\tcam" +
+      "paigns\030\001 \003(\0132\017.model.Campaign\":\n\013UserPro" +
+      "file\022+\n\013ruleVersion\030\001 \003(\0132\026.model.RuleVe" +
+      "rsionPair\"3\n\017RuleVersionPair\022\017\n\007rule_id\030" +
+      "\001 \001(\t\022\017\n\007version\030\002 \001(\003\"8\n\020PlayActivityRu" +
+      "le\022\022\n\ncontent_id\030\001 \001(\t\022\020\n\010progress\030\002 \001(\003" +
+      "\">\n\020SubscriptionRule\022\027\n\017subscription_id\030" +
+      "\001 \001(\t\022\021\n\tplan_name\030\002 \001(\t\",\n\021LoginActivit" +
+      "yRule\022\027\n\017last_login_date\030\001 \001(\t\"\330\001\n\004Rule\022" +
+      "\017\n\007rule_id\030\001 \001(\t\022\021\n\trule_name\030\002 \001(\t\0225\n\022p" +
+      "lay_activity_rule\030\003 \001(\0132\027.model.PlayActi" +
+      "vityRuleH\000\0224\n\021subscription_rule\030\004 \001(\0132\027." +
+      "model.SubscriptionRuleH\000\0227\n\023login_activi" +
+      "ty_rule\030\005 \001(\0132\030.model.LoginActivityRuleH" +
+      "\000B\006\n\004rule\"d\n\010Schedule\022\027\n\017cron_expression" +
+      "\030\001 \001(\t\022\021\n\ttime_zone\030\002 \001(\t\022\027\n\017job_descrip" +
+      "tion\030\003 \001(\t\022\023\n\013job_options\030\004 \003(\t\"\247\001\n\006Targ" +
+      "et\022/\n\thome_page\030\001 \001(\0132\032.model.HomePageSh" +
+      "elfTargetH\000\022/\n\tpost_play\030\002 \001(\0132\032.model.P" +
+      "ostPlayShelfTargetH\000\0221\n\014notification\030\003 \001" +
+      "(\0132\031.model.NotificationTargetH\000B\010\n\006targe" +
+      "t\"\'\n\023HomePageShelfTarget\022\020\n\010shelf_id\030\001 \001" +
+      "(\t\";\n\023PostPlayShelfTarget\022\022\n\ncontent_id\030" +
+      "\001 \001(\t\022\020\n\010shelf_id\030\002 \001(\t\"&\n\022NotificationT" +
+      "arget\022\020\n\010shelf_id\030\001 \001(\t\"\211\001\n\010Campaign\022\023\n\013" +
+      "campaign_id\030\001 \001(\t\022\025\n\rcampaign_name\030\002 \001(\t" +
+      "\022\017\n\007rule_id\030\003 \001(\t\022!\n\010schedule\030\004 \001(\0132\017.mo" +
+      "del.Schedule\022\035\n\006target\030\005 \003(\0132\r.model.Tar" +
+      "get2P\n\017CampaignService\022=\n\020GetUserCampaig" +
+      "ns\022\022.model.UserRequest\032\023.model.UserRespo" +
+      "nse\"\000B-\n\032com.hzs.grpc_service.modelB\rCam" +
+      "paignProtoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -135,13 +137,13 @@ public final class CampaignProto {
     internal_static_model_UserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_UserRequest_descriptor,
-        new java.lang.String[] { "UserId", });
+        new java.lang.String[] { "UserId", "UserProfile", });
     internal_static_model_UserResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_UserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_UserResponse_descriptor,
-        new java.lang.String[] { "ResTest", });
+        new java.lang.String[] { "Campaigns", });
     internal_static_model_UserProfile_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_model_UserProfile_fieldAccessorTable = new

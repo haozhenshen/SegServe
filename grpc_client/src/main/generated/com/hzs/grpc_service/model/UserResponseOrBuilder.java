@@ -8,14 +8,26 @@ public interface UserResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string res_test = 1;</code>
-   * @return The resTest.
+   * <code>repeated .model.Campaign campaigns = 1;</code>
    */
-  java.lang.String getResTest();
+  java.util.List<com.hzs.grpc_service.model.Campaign> 
+      getCampaignsList();
   /**
-   * <code>string res_test = 1;</code>
-   * @return The bytes for resTest.
+   * <code>repeated .model.Campaign campaigns = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getResTestBytes();
+  com.hzs.grpc_service.model.Campaign getCampaigns(int index);
+  /**
+   * <code>repeated .model.Campaign campaigns = 1;</code>
+   */
+  int getCampaignsCount();
+  /**
+   * <code>repeated .model.Campaign campaigns = 1;</code>
+   */
+  java.util.List<? extends com.hzs.grpc_service.model.CampaignOrBuilder> 
+      getCampaignsOrBuilderList();
+  /**
+   * <code>repeated .model.Campaign campaigns = 1;</code>
+   */
+  com.hzs.grpc_service.model.CampaignOrBuilder getCampaignsOrBuilder(
+      int index);
 }

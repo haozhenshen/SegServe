@@ -1,7 +1,7 @@
 package com.hzs.campaign_management_service.service;
 
 import com.hzs.campaign_management_service.model.CampaignDAO;
-import com.hzs.campaign_management_service.proto.Campaign;
+import com.hzs.campaign_management_service.model.Campaign;
 import com.hzs.campaign_management_service.repository.CampaignRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;

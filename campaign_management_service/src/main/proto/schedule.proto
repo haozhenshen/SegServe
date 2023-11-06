@@ -1,0 +1,12 @@
+syntax = "proto3";
+package model;
+
+option java_package = "com.hzs.campaign_management_service.model";
+option java_outer_classname = "ScheduleProto";
+option java_multiple_files = true;
+
+message Schedule {
+  string cron_expression = 1;
+  string time_zone = 2;
+  string job_description = 3;
+}

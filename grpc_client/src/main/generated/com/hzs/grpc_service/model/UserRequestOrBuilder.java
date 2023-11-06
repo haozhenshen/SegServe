@@ -8,22 +8,29 @@ public interface UserRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   *  UserProfile user_profile = 2;
-   * </pre>
-   *
    * <code>string user_id = 1;</code>
    * @return The userId.
    */
   java.lang.String getUserId();
   /**
-   * <pre>
-   *  UserProfile user_profile = 2;
-   * </pre>
-   *
    * <code>string user_id = 1;</code>
    * @return The bytes for userId.
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
+
+  /**
+   * <code>.model.UserProfile user_profile = 2;</code>
+   * @return Whether the userProfile field is set.
+   */
+  boolean hasUserProfile();
+  /**
+   * <code>.model.UserProfile user_profile = 2;</code>
+   * @return The userProfile.
+   */
+  com.hzs.grpc_service.model.UserProfile getUserProfile();
+  /**
+   * <code>.model.UserProfile user_profile = 2;</code>
+   */
+  com.hzs.grpc_service.model.UserProfileOrBuilder getUserProfileOrBuilder();
 }

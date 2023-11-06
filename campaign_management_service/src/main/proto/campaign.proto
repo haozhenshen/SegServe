@@ -1,0 +1,19 @@
+syntax = "proto3";
+package model;
+
+
+option java_package = "com.hzs.campaign_management_service.model";
+option java_outer_classname = "CampaignProto";
+option java_multiple_files = true;
+
+import "rule.proto";
+import "schedule.proto";
+import "target.proto";
+
+message Campaign {
+  string campaign_id = 1;
+  string campaign_name = 2;
+  string rule_id = 3;
+  Schedule schedule = 4;
+  repeated Target target = 5;
+}

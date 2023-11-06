@@ -6,7 +6,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.57.2)",
-    comments = "Source: campaign.proto")
+    comments = "Source: campaign_grpc_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CampaignServiceGrpc {
 
@@ -244,7 +244,7 @@ public final class CampaignServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.hzs.grpc_service.model.CampaignProto.getDescriptor();
+      return com.hzs.grpc_service.model.CampaignGrpcProto.getDescriptor();
     }
 
     @java.lang.Override
